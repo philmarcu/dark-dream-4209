@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'Recipe Show Page' do
   context 'user story 2' do
-    it 'shows all ingredients connected to recipe' do
+    it 'shows all ingredients connected to recipe + total cost' do
       burrito = Recipe.create!(name: "Breakfast Bean Burrito", complexity: 3, genre: "Mexican")
       omelet = Recipe.create!(name: "Cheese Omelet", complexity: 2, genre: "American")
 
@@ -23,6 +23,7 @@ RSpec.describe 'Recipe Show Page' do
       expect(page).to have_content("Beans")
       expect(page).to have_content("Breakfast Bean Burrito")
       expect(page).to_not have_content("Eggs")
+      expect(page).to have_content("Total Cost: 13")
     end
   end
 end
