@@ -19,8 +19,6 @@ RSpec.describe 'Recipe Show Page' do
 
       visit "recipes/#{burrito.id}"
       
-      save_and_open_page
-
       expect(page).to have_content("Breakfast Bean Burrito")
       expect(page).to have_content("Beans")
       expect(page).to have_content("Breakfast Bean Burrito")

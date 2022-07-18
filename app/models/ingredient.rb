@@ -4,4 +4,9 @@ class Ingredient < ApplicationRecord
 
   has_many :recipe_ingredients
   has_many :recipes, through: :recipe_ingredients
+
+
+  def rec_count
+    recipe_ingredients.count
+  end
 end

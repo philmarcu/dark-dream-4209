@@ -1,7 +1,7 @@
 <h1>Ingredients for <%= @recipe.name %></h1>
 
 <% @recipe.ingredients.each_with_index do |ing, index| %>
-  <div id="ingredient- <%= index %>%>">
+  <div id="ingredient- <%= ing.id %>">
   Name: <b><%= ing.name %></b>
   Cost: $ <b><%= ing.cost %></b><br><br>
   </div>

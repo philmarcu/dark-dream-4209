@@ -6,15 +6,15 @@ RSpec.describe 'Recipe Index Page' do
       it 'links to a recipe page' do
         burrito = Recipe.create!(name: "Breakfast Bean Burrito", complexity: 3, genre: "Mexican")
         omelet = Recipe.create!(name: "Cheese Omelet", complexity: 2, genre: "American")
-
+        
         visit "/recipes"
                 
-        within "#recipe-0" do
+        within "#recipe-#{burrito.id}" do
           expect(page).to have_content("Breakfast Bean Burrito")
           expect(page).to have_content("Mexican")
         end 
         
-        within "#recipe-1" do
+        within "#recipe-#{omelet.id}" do
           expect(page).to have_content("Cheese Omelet")
           expect(page).to have_content("American")
         end

@@ -1,0 +1,8 @@
+<h1>Ingredients Book</h1>
+<% @ingredients.each_with_index do |ing| %>
+  <div id="recipe-<%= ing.id %>">
+    <b><%= ing.name %></b>
+    Cost: <%= ing.cost %><br>
+    Used In <b><%= ing.rec_count %> Total Recipes</b>
+  </div>
+<% end %>
